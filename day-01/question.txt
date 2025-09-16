@@ -1,0 +1,13 @@
+Q. Create a user named yousuf with a non-interactive shell on App Server 3
+
+reference - https://medium.com/@ikunalsingh/create-linux-user-with-non-interactive-shell-332c91cad6ff
+
+Ans - 
+
+1. SSH into the server given for eg.- App Server 1
+    - `ssh <server ip>`  OR `ssh <user@servername>`
+
+2. Create the user using command
+    - sudo useradd <User_name> -s /sbin/nologin
+
+    
