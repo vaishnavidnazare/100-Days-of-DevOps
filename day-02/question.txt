@@ -1,0 +1,7 @@
+Q. Create a user with expiry 
+Ans:
+    1. First ssh to the env in which u want to add the user.
+    2. Now add the user a expiry date.
+        - sudo useradd john -e 2024-09-17
+        
+         
