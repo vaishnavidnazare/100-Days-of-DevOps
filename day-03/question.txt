@@ -1,0 +1,6 @@
+Q. Secure or disable Root SSH Access
+ans:
+    - Edit the file `/etc/ssh/sshd_config`
+        - set `PermitRootLogin no`
+    - Restart sshd
+        - `sudo systemctl restart sshd`
