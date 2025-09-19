@@ -1,0 +1,6 @@
+Q. Script execution permissions
+Ans: 
+    1. ssh into the server
+    2. use the following command to give permissions to the user.
+        - sudo chmod a+rx /tmp/xfusioncorp.sh.
+          This command ensures the script is readable by the shell and executable by all users.
