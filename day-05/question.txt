@@ -1,0 +1,15 @@
+
+Q. SELinux installation and configuration
+Ans: 
+    1. Install selinux 
+        - `sudo yum -y install selinux* --allowerasing --skip-broken`
+
+    2. disable selinux from the file 
+        - /etc/selinux/config
+
+    3. set the values as 
+        - SELINUX=enforcing
+          SELINUXTYPE=targeted
+
+Ref: https://learnbydoing.hashnode.dev/selinux-installation
+
