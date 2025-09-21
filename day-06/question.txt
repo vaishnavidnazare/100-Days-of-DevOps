@@ -1,0 +1,3 @@
+Q. Create a CronJob in Linux 
+Ans: 
+    ref: https://www.nbtechsupport.co.in/2020/12/a-cron-job-linux-server-kodekloud.html
