@@ -1,0 +1,10 @@
+Q. Install ansible and make sure all users can access it 
+Ans: 
+    1. Install ansible with root user 
+        - `sudo pip3 install "ansible==4.9.0"`
+
+    2. Verify the installation path , by doing `which ansible`
+        - you should get /usr/local/bin/ansible
+
+    3. also with echo $PATH 
+        - you should have `/usr/local/bin/` in the path.
