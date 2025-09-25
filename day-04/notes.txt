@@ -1,0 +1,2 @@
+- The details about whta is chown , chgrp or the rwx permissions or 421 permissions is given in the doc below.
+    https://www.redhat.com/en/blog/linux-file-permissions-explained

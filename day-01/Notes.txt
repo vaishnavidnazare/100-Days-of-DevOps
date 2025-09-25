@@ -1,0 +1,2 @@
+- -s is used to assign a shell.
+- For interactive permissions we can assign the shell /bin/bash or /bin/sh
