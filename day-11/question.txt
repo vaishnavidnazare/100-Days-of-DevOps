@@ -1,0 +1,33 @@
+Q. Install Tomcat server and configure it .
+Install tomcat server on App Server 2. b. Configure it to run on port 3004. c. There is a ROOT.war file on Jump host at location /tmp. Deploy it on this tomcat server and make sure the webpage works directly on base URL i.e curl http://stapp02:3004
+Ans: 
+    1. `scp /tmp/ROOT.war steve@stapp02:/tmp/ROOT.war`
+    2. `ssh steve@stapp02`
+    3. `sudo yum install java-1.8.0-openjdk-devel -y`
+    4. `java -version`
+    5. `cd /opt`
+    6. `sudo yum install wget -y`
+        `sudo wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.75/bin/apache-tomcat-9.0.75.tar.gz`
+        `sudo mv apache-tomcat-9.0.75 tomcat`
+        `sudo chown -R $USER:$USER /opt/tomcat`
+
+    7. `sudo vi /opt/tomcat/conf/server.xml`
+        Make sure the connector port is changed to 3004.
+        `<Connector port="3004" protocol="HTTP/1.1"
+           connectionTimeout="20000"
+           redirectPort="8443" />`
+
+    8. `sudo /opt/tomcat/bin/startup.sh`
+        Check logs to make sure that the tomcat server has started
+        `tail -f /opt/tomcat/logs/catalina.out`
+
+    9.`sudo cp /tmp/ROOT.war /opt/tomcat/webapps/ROOT.war`
+
+
+    Extra steps if required
+
+    1. `sudo firewall-cmd --permanent --add-port=3004/tcp`
+        `sudo firewall-cmd --reload`
+
+
+    `curl http://localhost:3004`                         
