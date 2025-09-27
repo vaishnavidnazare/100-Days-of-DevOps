@@ -1,0 +1,14 @@
+Q. Curl the apache service from jum_host and check why is it not working?
+Ans: 
+    1. `ssh tony@stapp01`
+    2. `sudo systemctl status httpd`
+        apache service not working, address already in use 
+    3. Identify which service is using the port 
+        `sudo netstat -tulnp | grep 8085` - sendmail was that service
+    4. `sudo systemctl stop sendmail`
+    5. `sudo systemctl disable sendmail`
+    6. `sudo systemctl start httpd`
+    7. now the curl command wil work 
+        `curl http://stapp01:8085`
+
+
