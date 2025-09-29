@@ -1,0 +1,3 @@
+Q. Linux Process Troubleshooting
+Ans: 1. systemctl status httpd
+    2. similar troubleshooting as day 12 question.
