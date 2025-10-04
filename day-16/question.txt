@@ -1,0 +1,33 @@
+Q. To install nad configure nginx as a loadbalancer
+ANS: 
+    1. we need to see on which ports the app servers are listening and use that ports in the load balancer config.
+    2. The following changes need to made in the nginx.conf file after install nginx.
+
+        `   worker_processes 1;
+
+            events {
+                worker_connections 1024;
+            }
+
+            http {
+                upstream app_servers {
+                    server 192.168.1.11:80;
+                    server 192.168.1.12:80;
+                    server 192.168.1.13:80;
+                }
+
+                server {
+                    listen 80;
+
+                    location / {
+                        proxy_pass http://app_servers;
+                        proxy_set_header Host $host;
+                        proxy_set_header X-Real-IP $remote_addr;
+                        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                        proxy_set_header X-Forwarded-Proto $scheme;
+                    }
+                }
+            }
+            `
+
+    3. the IPs and port must be changed accordingly.

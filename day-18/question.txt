@@ -1,0 +1,30 @@
+Q. Install and configure mariadb
+ANS: 
+
+    a. Install httpd, php and dependencies on all app hosts:
+
+        sudo yum install httpd php php-mysqlnd -y
+
+    b. Configure Apache to serve on port 6300:
+
+        Edit /etc/httpd/conf/httpd.conf, change or add:
+
+        Listen 6300
+        
+        sudo systemctl restart httpd
+
+    c. Install and configure MariaDB on DB server:
+
+        sudo yum install mariadb-server -y
+        sudo systemctl enable mariadb
+        sudo systemctl start mariadb
+
+    d. Create database and user in MariaDB:
+    
+        sudo mysql -u root
+
+        CREATE DATABASE kodekloud_db2;
+        CREATE USER 'kodekloud_tim'@'%' IDENTIFIED BY 'Rc5C9EyvbU';
+        GRANT ALL PRIVILEGES ON kodekloud_db2.* TO 'kodekloud_tim'@'%';
+        FLUSH PRIVILEGES;
+        EXIT;

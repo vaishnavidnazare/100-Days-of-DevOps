@@ -1,0 +1,10 @@
+Q. To configure postgresql.
+ans: 
+    1. refer following commands.
+        - `sudo -u postgres psql` - to enter the commandline.
+        - `CREATE USER kodekloud_pop WITH PASSWORD 'LQfKeWWxWD';`
+        - `CREATE DATABASE kodekloud_db8;`
+        - `GRANT ALL PRIVILEGES ON DATABASE kodekloud_db8 TO kodekloud_pop;`
+        - `\q` - to exit.
+        
+         
