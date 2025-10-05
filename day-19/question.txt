@@ -1,3 +1,5 @@
 Q. Install and Configure WEB Application.
 Ans: 
     
+    The main think to remember  is that to copy files from one server to other server at the location /var/ww/html , access is usually denied , 
+    so we can copy it to the /tmp directory and then move to the exact location we want.
